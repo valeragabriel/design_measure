@@ -3,8 +3,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from api.Exemple_api import start
+from api.ClothMeasure_masc import run
+import urllib
 
 from .models import * 
+from .forms import *
 from .forms import CreateUserForm
 
 
@@ -88,13 +92,54 @@ def services(request):
 
     return render(request, 'services.html', {'features': features})
 
+def _grab_image(path=None, stream=None, url=None):
+    if path is not None:
+        return path
+    else:
+        if url is not None:
+            resp = urllib.urlopen(url)
+            data = resp.read()
+        elif stream is not None:
+            data = stream.read()
+
+        temp_file = 'temp_image.jpg'
+        with open(temp_file, 'wb') as f:
+            f.write(data)
+        return temp_file
+
 @login_required(login_url='login')
 def user_page(request):
     return render(request, 'user_page.html')
 
 @login_required(login_url='login')
 def bodyMeasure(request):
-    return render(request, 'bodyMeasure.html')
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if request.FILES.GET("image", None) is not None:
+            img_path = _grab_image(stream=request.FILES["image"])
+            height_cm = int(request.POST.get('height_cm'))
+            
+            image_results = start(img_path, height_cm)
+
+            #Resultados ilustrativos
+            forearm = 40
+            arm = 60
+            waist_shoulder = 50
+            leg = 80
+            bust = 40
+            waist_knee = 60
+
+            cloth_measure = run(forearm, arm, waist_shoulder, leg, bust, waist_knee)
+            tam_camiseta = (cloth_measure['camiseta'])
+            tam_camisa = (cloth_measure['camisa'])
+            tam_calca = (cloth_measure['calca'])
+            tam_bermuda = (cloth_measure['bermuda'])
+
+            return render(request, 'bodyMeasure.html', {'form': form, 'image_results': image_results, 'image': img_path, 'tam_camiseta': tam_camiseta,'height_cm': height_cm, 'tam_camisa': tam_camisa, 'tam_calca': tam_calca, 'tam_bermuda': tam_bermuda})
+    else:
+        form = ImageForm()
+    return render(request, 'bodyMeasure.html', {'form': form})
+
 
 @login_required(login_url='login')
 def clothMeasure(request):

@@ -10,7 +10,8 @@ class About(models.Model):
     description = models.TextField(max_length=1000)
     img = models.ImageField(upload_to='images/', default='default.jpg')
 
-
+class Image(models.Model):
+    image = models.ImageField(upload_to='images')
     
     
         
