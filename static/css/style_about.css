@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.content img {
+    max-width: 40%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.content p {
+    max-width: 50%;
+}
