@@ -92,21 +92,6 @@ def services(request):
 
     return render(request, 'services.html', {'features': features})
 
-def _grab_image(path=None, stream=None, url=None):
-    if path is not None:
-        return path
-    else:
-        if url is not None:
-            resp = urllib.urlopen(url)
-            data = resp.read()
-        elif stream is not None:
-            data = stream.read()
-
-        temp_file = 'temp_image.jpg'
-        with open(temp_file, 'wb') as f:
-            f.write(data)
-        return temp_file
-
 @login_required(login_url='login')
 def user_page(request):
     return render(request, 'user_page.html')
@@ -124,17 +109,31 @@ def bodyMeasure(request):
             # Resultados ilustrativos
             # Esses reais resultados são obtidos através do algoritmo de extração de medidas corporais
             # Só estou mostrando como chama uma api e como funciona a lógica de aplica-la 
-           
-            cloth_measure = run(forearm=26, arm=53, waist_shoulder=62, leg=80, bust=60, waist_knee=50, waist=105)
+            cloth_measure = run(forearm=26, arm=53, waist_shoulder=62, leg=85, bust=60, waist_knee=50, waist=105)
             tam_camiseta = (cloth_measure['camiseta'])
             tam_camisa = (cloth_measure['camisa'])
             tam_calca = (cloth_measure['calca'])
             tam_bermuda = (cloth_measure['bermuda'])
 
-            return render(request, 'bodyMeasure.html', {'form': form, 'image_results': image_results, 'image': img_path, 'tam_camiseta': tam_camiseta,'height_cm': height_cm, 'tam_camisa': tam_camisa, 'tam_calca': tam_calca, 'tam_bermuda': tam_bermuda})
+            return render(request, 'results.html', {'form': form, 'image_results': image_results, 'image': img_path, 'tam_camiseta': tam_camiseta,'height_cm': height_cm, 'tam_camisa': tam_camisa, 'tam_calca': tam_calca, 'tam_bermuda': tam_bermuda, 'height_cm': height_cm})
     else:
         form = ImageForm()
     return render(request, 'bodyMeasure.html', {'form': form})
+
+def _grab_image(path=None, stream=None, url=None):
+    if path is not None:
+        return path
+    else:
+        if url is not None:
+            resp = urllib.urlopen(url)
+            data = resp.read()
+        elif stream is not None:
+            data = stream.read()
+
+        temp_file = 'temp_image.jpg'
+        with open(temp_file, 'wb') as f:
+            f.write(data)
+        return temp_file
 
 
 @login_required(login_url='login')
