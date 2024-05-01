@@ -59,38 +59,38 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento local:
 Measuremate/
 │
 ├── api/
-│   └── ClothMeasure_masc.py
-    └── Exemple_api.py
+│ └── ClothMeasure_masc.py
+│ └── Exemple_api.py
 │
 ├── measure_mate/
-│   └── __init__.py
-    └── asgi.py
-    └── settings.py
-    └── urls.py
-    └── wsgi.py
+│ └── init.py
+│ └── asgi.py
+│ └── settings.py
+│ └── urls.py
+│ └── wsgi.py
 │
 ├── main/
-│   └── __init__.py
-    └── admin.py
-    └── apps.py
-    └── forms.py
-    └── models.py 
-    └── teste.py
-    └── urls.py
-    └── views.py
+│ └── init.py
+│ └── admin.py
+│ └── apps.py
+│ └── forms.py
+│ └── models.py
+│ └── teste.py
+│ └── urls.py
+│ └── views.py
 │
 ├── static/
-│   └── css
-    └── fonts
-    └── fonts_login
-    └── images
-    └── js
-    └── scss_login
-    └── vendor_login
-        └── jquery
+│ └── css/
+│ └── fonts/
+│ └── fonts_login/
+│ └── images/
+│ └── js/
+│ └── scss_login/
+│ └── vendor_login/
+│ └── jquery/
 │
 ├── templates/
-│   └── .html (todos arquivos.html estão aqui)
+│ └── .html (todos arquivos.html estão aqui)
 │
 ├── Dockerfile
 └── manage.py
