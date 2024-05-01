@@ -55,8 +55,8 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento local:
     
     Após concluir as etapas acima, é hora de disponibilizar o código no GitHub. Em seguida, acesse o Back4app para criar um novo projeto. Escolha a opção de servidor com containers e autorize o acesso ao seu repositório no GitHub. Selecione o projeto que você deseja implantar como servidor web. O Back4app realizará o deploy e a construção do projeto, gerando um link acessível que será hospedado online. Após isso, volte ao seu código e adicione o link gerado no arquivo settings.py, na seção onde está definido ALLOWED_HOSTS = ['link_gerado_pelo_back4app']. Faça o commit dessas alterações e retorne ao Back4app. Aguarde a conclusão do processo de construção e, em seguida, acesse o link gerado para visualizar o código disponível na web.
     
-## Organização das pastas e arquivos 
-
+## Estrutura do Projeto 
+```
 Measuremate/
 │
 ├── api/
@@ -96,11 +96,22 @@ Measuremate/
 ├── Dockerfile
 └── manage.py
 └── requirements.txt
+```
 
-## Explicando as pastas 
+## Descrição das Pastas e Arquivos
+
 - **api:**Esta pasta serve como o ponto de entrada para as funcionalidades da aplicação, onde estão localizadas as diversas aplicações que serão chamadas no views.py. Aqui, encontramos implementações específicas, como a lógica para determinar o vestuário ideal e o algoritmo de extração de medidas corporais.
+
 - **measure_mate:** Essa é a pasta central do projeto Django, representando o núcleo do sistema. Ao iniciar um novo projeto, é aqui que começamos, pois contém todas as configurações essenciais, como definições de banco de dados, configurações de segurança e outros elementos fundamentais para a execução do projeto.
+
 - **main:** A pasta main desempenha um papel vital na organização do backend do projeto. É aqui que estruturamos e implementamos as funcionalidades principais, como a definição de modelos de dados, criação de rotas para acessar as APIs e a implementação da lógica de negócios principal.
+
 - **static:** Nesta pasta, encontramos todos os recursos estáticos do projeto, como imagens, folhas de estilo (CSS) e scripts (JavaScript).
+
 - **templates:** Os arquivos HTML que moldam a aparência e a estrutura das páginas da aplicação estão localizados aqui. Os templates desempenham um papel crucial ao permitir a inserção de dados dinâmicos gerados pelo backend. Esta separação de responsabilidades facilita a manutenção do código e a implementação de designs coesos e flexíveis.
 
+**Dockerfile:** Arquivo utilizado para configurar um contêiner Docker com as dependências e configurações necessárias para executar a aplicação.
+
+- **manage.py:** Um utilitário de linha de comando que permite interagir com o projeto Django de várias maneiras, como iniciar o servidor de desenvolvimento, criar migrações de banco de dados e executar testes.
+
+- **requirements.txt:** Um arquivo de texto que lista todas as dependências Python necessárias para executar o projeto. Pode ser usado para instalar todas as dependências com um único comando.
