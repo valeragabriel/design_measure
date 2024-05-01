@@ -29,9 +29,10 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento local:
     mkvirtualenv <nome_do_projeto>
     workon <nome_do_projeto>
     ```
-3. Instale as dependências:
+3. Instale as dependências e criar txt com requirements:
     ```bash
     pip install -r requirements.txt
+    pip freeze > requirements.txt
     ```
 4. Execute as migrações do banco de dados:
     ```bash
