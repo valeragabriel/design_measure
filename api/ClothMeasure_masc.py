@@ -2,6 +2,11 @@ import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 
+# Posso fazer com que o  usuario insira os valores de tamanhos da roupas, entretanto 
+# para facilitar a visualização e testes, inseri valores fixos para os tamanhos das roupas com base 
+# em uma tabela de medidas de roupas masculinas de uma loja online 
+# estou pensando em colocar uma deep learning para aprender o tamanho das roupas com base nas medidas do usuário
+# entretanto esse algoritmo é apenas para testes e não será utilizado no projeto final 
 def camiseta(resultado_busto, resultado_manga, resultado_blusa):
     comprimento_busto = ctrl.Antecedent(np.arange(46, 61, 1), 'comprimento_busto')    
     comprimento_manga = ctrl.Antecedent(np.arange(20, 25, 1), 'comprimento_manga')
@@ -243,14 +248,15 @@ def bermuda(resultado_quadril_joelho, resultado_quadril):
 
     return tamanho
 
-def run(forearm, arm, waist_shoulder, leg, bust, waist_knee):
-    resultado_busto = 60
+def run(forearm, arm, waist_shoulder, leg, bust, waist_knee, waist):
+    resultado_busto = bust
     resultado_manga = forearm
     resultado_mangaL = arm
     resultado_blusa = waist_shoulder
-    resultado_quadril = 105
+    resultado_quadril = waist
     resultado_perna = leg
-    resultado_quadril_joelho = 50
+    resultado_quadril_joelho = waist_knee
+
     
     tamanho_camiseta = camiseta(resultado_busto, resultado_manga, resultado_blusa)
     tamanho_camisa = camisa(resultado_busto, resultado_mangaL, resultado_blusa)

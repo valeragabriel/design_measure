@@ -115,21 +115,17 @@ def user_page(request):
 def bodyMeasure(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
-        if request.FILES.GET("image", None) is not None:
+        if request.FILES.get("image", None) is not None:
             img_path = _grab_image(stream=request.FILES["image"])
             height_cm = int(request.POST.get('height_cm'))
             
             image_results = start(img_path, height_cm)
 
-            #Resultados ilustrativos
-            forearm = 40
-            arm = 60
-            waist_shoulder = 50
-            leg = 80
-            bust = 40
-            waist_knee = 60
-
-            cloth_measure = run(forearm, arm, waist_shoulder, leg, bust, waist_knee)
+            # Resultados ilustrativos
+            # Esses reais resultados são obtidos através do algoritmo de extração de medidas corporais
+            # Só estou mostrando como chama uma api e como funciona a lógica de aplica-la 
+           
+            cloth_measure = run(forearm=26, arm=53, waist_shoulder=62, leg=80, bust=60, waist_knee=50, waist=105)
             tam_camiseta = (cloth_measure['camiseta'])
             tam_camisa = (cloth_measure['camisa'])
             tam_calca = (cloth_measure['calca'])
@@ -152,6 +148,10 @@ def measureDate(request):
 @login_required(login_url='login')
 def user_services(request):
     return render(request, 'user_services.html')
+
+@login_required(login_url='login')
+def results(request):
+    return render(request, 'results.html')
 
 # @login_required(login_url='login;)
 # def servicos_disponiveis(request):
