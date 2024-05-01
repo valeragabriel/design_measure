@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>Resultados das Medidas Corporais</h1>
+    <ul>
+        <li>Altura: {{ image_results.height_cm|floatformat:"2" }}</li> 
+        <!-- Poderiam vir outras medidas como essas, entretanto nao estou usando minha api de medidas corporais -->
+        <!-- <li>Comprimento cintura-joelho: {{ image_results.waist_knee|floatformat:"2" }}</li>
+        <li>Comprimento perna: {{ image_results.leg|floatformat:"2" }}</li>
+        <li>Comprimento cintura-ombro: {{ image_results.waist_shoulder|floatformat:"2" }}</li>
+        <li>Comprimento braço: {{ image_results.arm|floatformat:"2" }}</li>
+        <li>Comprimento manga: {{ image_results.forearm|floatformat:"2" }}</li>
+        <li>Comprimento busto: {{ image_results.bust|floatformat:"2" }}</li>
+        <li>Comprimento ombro-joelho: {{ image_results.shoulder_knee|floatformat:"2" }}</li>
+        <li>Comprimento ombro-pé: {{ image_results.shoulder_heel|floatformat:"2" }}</li>
+        <li>Comprimento pescoço-cabeça: {{ image_results.neck_head|floatformat:"2" }}</li> -->
+        <li>Tamanho camiseta: {{ tam_camiseta }}</li>
+        <li>Tamanho camisa: {{ tam_camisa }}</li>
+        <li>Tamanho calça: {{ tam_calca|floatformat:"0" }}</li>
+        <li>Tamanho bermuda: {{ tam_bermuda|floatformat:"0" }}</li>
+    </ul>
+</body>
+</html>

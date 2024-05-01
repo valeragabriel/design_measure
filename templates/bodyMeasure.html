@@ -79,6 +79,33 @@
          </div>
       </header> 
       <!-- end header -->
+      <!-- main section -->
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="title" style="margin-top: 140px;" >
+                  <h2>Body Measurements</h2>
+               </div>
+            </div>
+         <main>
+             <form method="post" enctype="multipart/form-data">
+                 {% csrf_token %}
+                 <label for="height_cm">Altura em Centímetros</label><br>
+                 <input type="number" id="height_cm" name="height_cm" placeholder="1,80m = 180cm" required><br>
+                 {{ form.as_p }}
+                 <button type="submit">Enviar</button>
+             </form>
+             {% if form.errors %}
+                 <p style="color: red;">Erro ao enviar o formulário. Por favor, verifique os campos e tente novamente.</p>
+             {% endif %}
+             {% if image_results %}
+                 <section id="results">
+                     <h2>Resultados</h2>
+                     <img src="{{ image_results }}" alt="Resultado da Imagem">
+                 </section>
+             {% endif %}
+         </main>
+     </div>
       <!-- footer -->
       <footer>
         <div class="footer">
