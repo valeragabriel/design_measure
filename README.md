@@ -48,13 +48,13 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento local:
     python manage.py runserver
     ```
 7. Dockerfile:
-    ```
+    
     Para garantir que o servidor web funcione sem problemas, optei por utilizar o Docker. O Docker é uma ferramenta usada para implantar aplicativos em containers virtuais, permitindo que vários aplicativos funcionem em diferentes ambientes de forma simplificada. Nesse código tem o arquivo Docker mostrando o passo a passo do que tem que fazer para funcionar o código. 
-    ```
+
 8. Back4app:
-    ```
-    cluir as etapas acima, é hora de disponibilizar o código no GitHub. Em seguida, acesse o Back4app para criar um novo projeto. Escolha a opção de servidor com containers e autorize o acesso ao seu repositório no GitHub. Selecione o projeto que você deseja implantar como servidor web. O Back4app realizará o deploy e a construção do projeto, gerando um link acessível que será hospedado online. Após isso, volte ao seu código e adicione o link gerado no arquivo settings.py, na seção onde está definido ALLOWED_HOSTS = ['link_gerado_pelo_back4app']. Faça o commit dessas alterações e retorne ao Back4app. Aguarde a conclusão do processo de construção e, em seguida, acesse o link gerado para visualizar o código disponível na web.
-    ```
+    
+    Após concluir as etapas acima, é hora de disponibilizar o código no GitHub. Em seguida, acesse o Back4app para criar um novo projeto. Escolha a opção de servidor com containers e autorize o acesso ao seu repositório no GitHub. Selecione o projeto que você deseja implantar como servidor web. O Back4app realizará o deploy e a construção do projeto, gerando um link acessível que será hospedado online. Após isso, volte ao seu código e adicione o link gerado no arquivo settings.py, na seção onde está definido ALLOWED_HOSTS = ['link_gerado_pelo_back4app']. Faça o commit dessas alterações e retorne ao Back4app. Aguarde a conclusão do processo de construção e, em seguida, acesse o link gerado para visualizar o código disponível na web.
+    
 
 ## Licença
 Este projeto está licenciado sob a [MIT License](LICENSE).
