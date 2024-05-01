@@ -56,6 +56,7 @@ Siga as etapas abaixo para configurar o ambiente de desenvolvimento local:
     Após concluir as etapas acima, é hora de disponibilizar o código no GitHub. Em seguida, acesse o Back4app para criar um novo projeto. Escolha a opção de servidor com containers e autorize o acesso ao seu repositório no GitHub. Selecione o projeto que você deseja implantar como servidor web. O Back4app realizará o deploy e a construção do projeto, gerando um link acessível que será hospedado online. Após isso, volte ao seu código e adicione o link gerado no arquivo settings.py, na seção onde está definido ALLOWED_HOSTS = ['link_gerado_pelo_back4app']. Faça o commit dessas alterações e retorne ao Back4app. Aguarde a conclusão do processo de construção e, em seguida, acesse o link gerado para visualizar o código disponível na web.
     
 ## Organização das pastas e arquivos 
+
 Measuremate/
 │
 ├── api/
