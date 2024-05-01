@@ -100,7 +100,7 @@ Measuremate/
 
 ## Descrição das Pastas e Arquivos
 
-- **api:**Esta pasta serve como o ponto de entrada para as funcionalidades da aplicação, onde estão localizadas as diversas aplicações que serão chamadas no views.py. Aqui, encontramos implementações específicas, como a lógica para determinar o vestuário ideal e o algoritmo de extração de medidas corporais.
+- **api:** Este diretório serve como o ponto de entrada para as funcionalidades da aplicação, onde estão localizadas as diversas aplicações que serão chamadas no views.py. Aqui, encontramos implementações específicas, como a lógica para determinar o vestuário ideal e o algoritmo de extração de medidas corporais.
 
 - **measure_mate:** Essa é a pasta central do projeto Django, representando o núcleo do sistema. Ao iniciar um novo projeto, é aqui que começamos, pois contém todas as configurações essenciais, como definições de banco de dados, configurações de segurança e outros elementos fundamentais para a execução do projeto.
 
@@ -110,7 +110,7 @@ Measuremate/
 
 - **templates:** Os arquivos HTML que moldam a aparência e a estrutura das páginas da aplicação estão localizados aqui. Os templates desempenham um papel crucial ao permitir a inserção de dados dinâmicos gerados pelo backend. Esta separação de responsabilidades facilita a manutenção do código e a implementação de designs coesos e flexíveis.
 
-**Dockerfile:** Arquivo utilizado para configurar um contêiner Docker com as dependências e configurações necessárias para executar a aplicação.
+- **Dockerfile:** Arquivo utilizado para configurar um contêiner Docker com as dependências e configurações necessárias para executar a aplicação.
 
 - **manage.py:** Um utilitário de linha de comando que permite interagir com o projeto Django de várias maneiras, como iniciar o servidor de desenvolvimento, criar migrações de banco de dados e executar testes.
 
