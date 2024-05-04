@@ -146,7 +146,23 @@ def measureDate(request):
 
 @login_required(login_url='login')
 def user_services(request):
-    return render(request, 'user_services.html')
+
+    feature1 = Features.objects.create(
+        name="Extração de Medidas corporais",
+        description="Informe sua altura, e envie uma foto, para  descobrir suas medidas corporais",
+        img_logo="/images/measure_cloth1.png",
+        url="bodyMeasure."
+    )
+
+    feature2 = Features.objects.create(
+        name="Vestimento Ideal",
+        description="Tamanho de roupa ideal",
+        img_logo="/images/measure_cloth1.png",
+        url="clothMeasure."
+    )
+
+    features = [feature1, feature2]
+    return render(request, 'user_services.html', {'features': features})
 
 @login_required(login_url='login')
 def results(request):

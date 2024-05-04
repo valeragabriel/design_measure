@@ -18,6 +18,59 @@
       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
       <!-- style css -->
       <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <style>
+         .titlepage::before {
+            content: "";
+            position: absolute;
+            border: #fff solid 5px;
+            border-width: 5px;
+            width: 80px;
+            z-index: 999;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: 95px;
+         }
+      </style>
+      <style>
+         body {
+             font-family: poppins;
+             margin: 0;
+             padding: 0;
+             background-color: #f2f2f2;
+         }
+         .wrapper {
+             max-width: 800px;
+             margin: 20px auto;
+             text-align: center;
+             background-color: #fff;
+             padding: 20px;
+             border-radius: 8px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         }
+         h1 {
+             font-size: 24px;
+             margin-bottom: 10px;
+         }
+         p {
+             font-size: 16px;
+             margin-bottom: 20px;
+         }
+
+         button {
+             padding: 10px 20px;
+             font-size: 18px;
+             background-color: #007bff;
+             color: #fff;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             transition: background-color 0.3s ease;
+         }
+         button:hover {
+             background-color: #0056b3;
+         }
+     </style> 
       <!-- responsive-->
       <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
       <!-- awesome fontfamily -->
@@ -79,6 +132,25 @@
          </div>
       </header> 
       <!-- end header -->
+      <!-- main section -->
+      <div class="we_do">
+         <div class="about_container">
+             <div class="row">
+                 <div class="col-md-12">
+                     <div class="titlepage text_align_center" style="padding: 40px;">
+                         <h2>Serviços</h2> 
+                     </div>
+                 </div>
+             </div>
+             {% for feature in features %}
+             <div class="wrapper">
+               <h1>{{feature.name}}</h1>
+               <img src="{% static feature.img_logo %}" alt="Descrição da Imagem">
+               <p>{{feature.description }}</p>
+               <a href="{{ feature.url }}"><button>Clique para utilizar</button></a>
+            </div>
+            {% endfor %}
+      <!-- end main section -->
       <!-- footer -->
       <footer>
         <div class="footer">

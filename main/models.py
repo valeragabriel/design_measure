@@ -13,6 +13,6 @@ class About(models.Model):
 class Image(models.Model):
     image = models.ImageField(upload_to='images')
     
-    
+
         
         
