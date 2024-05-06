@@ -50,7 +50,7 @@
          }
          h1 {
              font-size: 24px;
-             margin-bottom: 10px;
+             margin-bottom: 25px;
          }
          p {
              font-size: 16px;
@@ -147,7 +147,7 @@
                <h1>{{feature.name}}</h1>
                <img src="{% static feature.img_logo %}" alt="Descrição da Imagem">
                <p>{{feature.description }}</p>
-               <a href="{{ feature.url }}"><button>Clique para utilizar</button></a>
+               <a href="{% url feature.url %}"><button>Clique para utilizar</button></a>
             </div>
             {% endfor %}
       <!-- end main section -->

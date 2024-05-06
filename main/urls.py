@@ -12,8 +12,10 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('bodyMeasure/', views.bodyMeasure, name='bodyMeasure'),
     path('clothMeasure/', views.clothMeasure, name='clothMeasure'),
+    path('clothMeasure2/', views.clothMeasure2, name='clothMeasure2'),
     path('measureDate/', views.measureDate, name='measureDate'),
     path('user_services/', views.user_services, name='user_services'),
     path('results/', views.results, name='results'),
+    
 
     ]

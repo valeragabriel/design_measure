@@ -149,30 +149,33 @@ def user_services(request):
 
     feature1 = Features.objects.create(
         name="Extração de Medidas corporais",
-        description="Informe sua altura, e envie uma foto, para  descobrir suas medidas corporais",
-        img_logo="/images/measure_cloth1.png",
-        url="bodyMeasure."
+        description="Informe sua altura, e envie uma foto, para  descobrir suas medidas corporais.",
+        img_logo="/images/run_code.png",
+        url="bodyMeasure"
     )
 
     feature2 = Features.objects.create(
         name="Vestimento Ideal",
-        description="Tamanho de roupa ideal",
+        description="Através das suas medidas corporais enviadas encontramos o tamanho de roupa ideal para você, com base nas medidas de uma loja padrão.",
         img_logo="/images/measure_cloth1.png",
-        url="clothMeasure."
+        url="clothMeasure"
     )
 
-    features = [feature1, feature2]
+    feature3 = Features.objects.create(
+        name="Vestimento Ideal, com base na sua loja de interesse ",
+        description="Através das suas medidas corporais enviadas encontramos o tamanho de roupa ideal para você, entretanto você que define o tamanhos de medidas das roupas. ",
+        img_logo="/images/measure_cloth1.png",
+        url="clothMeasure2"
+    )
+
+    features = [feature1, feature2, feature3]
     return render(request, 'user_services.html', {'features': features})
 
 @login_required(login_url='login')
 def results(request):
     return render(request, 'results.html')
 
-# @login_required(login_url='login;)
-# def servicos_disponiveis(request):
-#     medidas = MedidaCorporal.objects.filter(usuario=request.user)
-#     return render(request, 'servicos_disponiveis.html', {'medidas': medidas})
+@login_required(login_url='login')
+def clothMeasure2(request):
+    return render(request, 'clothMeasure2.html')
 
-# urlpatterns = [
-#     path('servicos/', views.servicos_disponiveis, name='servicos_disponiveis'),
-# ]
