@@ -1,2 +1,0 @@
-## Bibliotecas utilizadas
-Criei essa pasta para discutir mais sobre as bibliotecas que foram utilizadas nas minhas APIs, caso tenha interessem, deixei separada em 4 pastas principais e cada uma delas com nome de sua biblioteca, na pasta contem uma contextualizacao geral da biblioteca, o passo a passo de como utiliza-la e exemplos de código. 
