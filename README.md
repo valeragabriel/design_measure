@@ -12,18 +12,20 @@ O MeasureMate visa fornecer uma solução fácil de usar para determinar o taman
 
 ## Frameworks e Tecnologias Utilizadas
 
+Caso queira saber mais sobre as bibliotecas utilizadas e como elas funcionam estará no diretorio Informações Extras.
+
 - **Django:** Utilizamos o framework Django para desenvolver o backend da aplicação devido à sua robustez, flexibilidade e familiaridade com a linguagem Python.
 - **HTML, CSS e JS:** O frontend do MeasureMate é desenvolvido utilizando HTML, CSS e JavaScript. Adotamos uma abordagem de personalização de templates pré-existentes para alcançar a estética desejada.
 -  **OpenCV:** Utilizei da OpenCV para o processamento da imagem no algoritmo de extração de medidas corporais.
 - **NumPY:** Utilizei para fazer as operações na imagem após ser lida pelo OpenCV.
-- **MediaPipe:** Ela é uma biblioteca de pose, foi utilizada para traçar pose no ser humano, também foi utilizada no algoritmo de extração de medidas corporais. 
+- **MediaPipe Pose solutions:** Ela é uma biblioteca de pose, foi utilizada para traçar pose no ser humano, também foi utilizada no algoritmo de extração de medidas corporais. 
 - **SkFuzzy:** Foi utilizada para traçar a lógica fuzzy a qual determina o tamanho do vestuário ideal da pessoa com base nas medidas corporais dela, para ela funcionar é necessário que instale também a biblioteca matplotlib. 
 
 ## Configuração do Ambiente de Desenvolvimento
 
 Siga as etapas abaixo para configurar o ambiente de desenvolvimento local:
 
-1. Clone este repositório: `git clone https://github.com/valeragabriel/MeasureMate.git`
+1. Clone este repositório: `git clone https://github.com/valeragabriel/desing_measure.git`
 2. Crie e ative um ambiente virtual:
     ```bash
     mkvirtualenv <nome_do_projeto>
@@ -99,16 +101,9 @@ Measuremate/
 ```
 
 ## Descrição das Pastas e Arquivos
+Aqui está apenas uma visão geral, caso queira saber mais, basta acessar o diretorio "Informações Extras"
 
 - **api:** Este diretório serve como o ponto de entrada para as funcionalidades da aplicação, onde estão localizadas as diversas aplicações que serão chamadas no views.py. Aqui, encontramos implementações específicas, como a lógica para determinar o vestuário ideal e o algoritmo de extração de medidas corporais.
-
-- **measure_mate:** Essa é a pasta central do projeto Django, representando o núcleo do sistema. Ao iniciar um novo projeto, é aqui que começamos, pois contém todas as configurações essenciais, como definições de banco de dados, configurações de segurança e outros elementos fundamentais para a execução do projeto.
-
-- **main:** A pasta main desempenha um papel vital na organização do backend do projeto. É aqui que estruturamos e implementamos as funcionalidades principais, como a definição de modelos de dados, criação de rotas para acessar as APIs e a implementação da lógica de negócios principal.
-
-- **static:** Nesta pasta, encontramos todos os recursos estáticos do projeto, como imagens, folhas de estilo (CSS) e scripts (JavaScript).
-
-- **templates:** Os arquivos HTML que moldam a aparência e a estrutura das páginas da aplicação estão localizados aqui. Os templates desempenham um papel crucial ao permitir a inserção de dados dinâmicos gerados pelo backend. Esta separação de responsabilidades facilita a manutenção do código e a implementação de designs coesos e flexíveis.
 
 - **Dockerfile:** Arquivo utilizado para configurar um contêiner Docker com as dependências e configurações necessárias para executar a aplicação.
 
