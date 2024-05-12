@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from api.Exemple_api import start
 from api.ClothMeasure_masc import run
+from api.input_clothMeasure import main
 import urllib
 
 from .models import * 
@@ -177,5 +178,40 @@ def results(request):
 
 @login_required(login_url='login')
 def clothMeasure2(request):
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+        if request.FILES.get("image", None) is not None:
+            img_path = _grab_image(stream=request.FILES["image"])
+            height_cm = int(request.POST.get('height_cm'))
+
+            image_results = start(img_path, height_cm)
+
+            blusa_PP  = int(request.POST.get('blusa_PP'))
+            blusa_P  = int(request.POST.get('blusa_P'))
+            blusa_M  = int(request.POST.get('blusa_M'))
+            blusa_G  = int(request.POST.get('blusa_G'))
+            blusa_GG = int(request.POST.get('blusa_GG'))
+            busto_PP  = int(request.POST.get('busto_PP'))
+            busto_P  = int(request.POST.get('busto_P'))
+            busto_M  = int(request.POST.get('busto_M'))
+            busto_G  = int(request.POST.get('busto_G'))
+            busto_GG = int(request.POST.get('busto_GG'))
+            manga_PP  = int(request.POST.get('manga_PP'))
+            manga_P  = int(request.POST.get('manga_P'))
+            manga_M  = int(request.POST.get('manga_M'))
+            manga_G  = int(request.POST.get('manga_G'))
+            manga_GG = int(request.POST.get('manga_GG'))
+            modelagem = request.POST.get('modelagem')
+    
+            
+            cloth_measure = main(blusa_PP, blusa_P, blusa_M, blusa_G, blusa_GG, busto_PP, busto_P, busto_M, busto_G, busto_GG, manga_PP, manga_P, manga_M, manga_G, manga_GG, modelagem)
+            tam_camiseta = (cloth_measure['camiseta'])
+            
+            return render(request, 'results_clothMeasure2.html', {'form': form, 'image_results': image_results, 'image': img_path, 'tam_camiseta': tam_camiseta,'height_cm': height_cm, 'blusa_PP': blusa_PP, 'blusa_P': blusa_P, 'blusa_M': blusa_M, 'blusa_G': blusa_G, 'blusa_GG': blusa_GG, 'busto_PP': busto_PP, 'busto_P': busto_P, 'busto_M': busto_M, 'busto_G': busto_G, 'busto_GG': busto_GG, 'manga_PP': manga_PP, 'manga_P': manga_P, 'manga_M': manga_M, 'manga_G': manga_G, 'manga_GG': manga_GG, 'modelagem': modelagem, 'height_cm': height_cm})
+    else:
+        form = ImageForm()
     return render(request, 'clothMeasure2.html')
 
+@login_required(login_url='login')
+def results_clothMeasure2(request):
+    return render(request, 'results_clothMeasure2.html')

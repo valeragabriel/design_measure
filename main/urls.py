@@ -16,6 +16,7 @@ urlpatterns = [
     path('measureDate/', views.measureDate, name='measureDate'),
     path('user_services/', views.user_services, name='user_services'),
     path('results/', views.results, name='results'),
+    path('results_clothMeasure2/', views.results_clothMeasure2, name='results_clothMeasure2'),
     
 
     ]
