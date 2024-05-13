@@ -8,8 +8,9 @@ Para o Frontend foi usado HTML, CSS e JS. Peguei templates prontos e fui modific
 
 - **templates:** Os templates desempenham um papel crucial ao permitir a inserção de dados dinâmicos gerados pelo backend. Esta separação de responsabilidades facilita a manutenção do código e a implementação de designs coesos e flexíveis.
 
+## Um pouco sobre as linguagens de frontend
 1. HTML: 
- Hypertext Markup Language, é a espinha dorsal da internet. É uma linguagem de marcação que define a estrutura e o conteúdo de uma página da web. No cerne do HTML está a ideia de marcação. As tags HTML são elementos fundamentais que envolvem e estruturam o conteúdo de uma página da web. Cada tag possui uma função específica, desde definir títulos e parágrafos até inserir imagens e criar links para outras páginas.
+Hypertext Markup Language, é a espinha dorsal da internet. É uma linguagem de marcação que define a estrutura e o conteúdo de uma página da web. No cerne do HTML está a ideia de marcação. As tags HTML são elementos fundamentais que envolvem e estruturam o conteúdo de uma página da web. Cada tag possui uma função específica, desde definir títulos e parágrafos até inserir imagens e criar links para outras páginas.
 Uma página HTML básica começa com a tag <html>, que indica o início do documento HTML. Dentro desta tag, encontramos duas seções principais: <head> e <body>. A seção <head> contém metadados, como o título da página e links para folhas de estilo CSS, enquanto a seção <body> contém o conteúdo visível da página, como texto, imagens e elementos interativos.
 
 2. CSS: 
@@ -18,7 +19,6 @@ A estrutura básica do CSS é composta por seletores e declarações. Os seletor
 
 3. JS: 
 Ao contrário do HTML, que é uma linguagem de marcação para estruturação de conteúdo, e do CSS, que é uma linguagem de estilos para apresentação visual, o JavaScript adiciona comportamento e dinamismo às páginas da web. Com JavaScript, os desenvolvedores podem responder a eventos do usuário, manipular elementos HTML, criar animações, validar formulários e muito mais.
-
 Uma das características mais poderosas do JavaScript é sua capacidade de manipular o DOM (Document Object Model). O DOM é uma representação em árvore dos elementos HTML de uma página e suas propriedades. Com JavaScript, os desenvolvedores podem acessar e modificar o DOM em tempo real, permitindo atualizações dinâmicas e interações responsivas com o usuário.
 
 ## Backend 
