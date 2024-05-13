@@ -27,7 +27,57 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
    </head>
 
-
+   <!-- body -->
+   <body class="main-layout">
+    <!-- header -->
+    <header>
+       <div class="header">
+          <div class="container-fluid">
+             <div class="row d_flex">
+                <div class=" col-md-2 col-sm-3 col logo_section">
+                   <div class="full">
+                      <div class="center-desk">
+                         <div class="logo">
+                            <a href=" "><img src="{% static 'images/logo2.png' %}" alt="#" /></a>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-8 col-sm-9">
+                   <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarsExample04">
+                         <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                               <a class="nav-link" href="{% url 'user_page' %} ">User Home</a>
+                            </li>
+                            <li class="nav-item">
+                               <a class="nav-link" href="{% url 'user_services' %}">User Services</a>
+                            </li>
+                            <li class="nav-item">
+                               <a class="nav-link" href="{% url 'measureDate' %}">User Measures </a>
+                            </li>
+                            <!-- <li class="nav-item">
+                               <a class="nav-link" href="contact ">Contate-nos</a>
+                            </li> -->
+                         </ul>
+                      </div>
+                   </nav>
+                </div>
+                <div class="col-md-2 d_none">
+                   <ul class="email text_align_right">
+                      <form method="post" action="{% url 'logout' %}">
+                      <li> <a href="{% url 'logout' %}"> Logout </a></li>
+                   </form>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+    </header> 
+    <!-- end header -->
     <!-- main section -->
     <div class="container">
         <div class="row">
@@ -42,23 +92,29 @@
                 <label for="height_cm">Altura em Centímetros</label><br>
                 <input type="number" id="height_cm" name="height_cm" placeholder="1,80m = 180cm" required><br>
                 <h2>Informe o tamanho da blusa no tamanhos respectivos: </h2>
-                <input type="number" id="blusa_PP" name="blusa_PP" placeholder="Blusa PP" required><br>
-                <input type="number" id="blusa_P" name="blusa_P" placeholder="Blusa P" required><br>
-                <input type="number" id="blusa_M" name="blusa_M" placeholder="Blusa M" required><br>
-                <input type="number" id="blusa_G" name="blusa_G" placeholder="Blusa G" required><br>
-                <input type="number" id="blusa_GG" name="blusa_GG" placeholder="Blusa GG" required><br>
-                <input type="number" id="busto_PP" name="busto_PP" placeholder="Busto PP" required><br>
-                <input type="number" id="busto_P" name="busto_P" placeholder="Busto P" required><br>
-                <input type="number" id="busto_M" name="busto_M" placeholder="Busto M" required><br>
-                <input type="number" id="busto_G" name="busto_G" placeholder="Busto G" required><br>
-                <input type="number" id="busto_GG" name="busto_GG" placeholder="Busto GG" required><br>
+                <input type="number" id="blusa_PP" name="blusa_PP" placeholder="Comprimento Blusa PP" required><br>
+                <input type="number" id="blusa_P" name="blusa_P" placeholder="Comprimento Blusa P" required><br>
+                <input type="number" id="blusa_M" name="blusa_M" placeholder="Comprimento Blusa M" required><br>
+                <input type="number" id="blusa_G" name="blusa_G" placeholder="Comprimento Blusa G" required><br>
+                <input type="number" id="blusa_GG" name="blusa_GG" placeholder="Comprimento Blusa GG" required><br>
+                <input type="number" id="busto_PP" name="busto_PP" placeholder="Comprimento Busto PP" required><br>
+                <input type="number" id="busto_P" name="busto_P" placeholder="Comprimento Busto P" required><br>
+                <input type="number" id="busto_M" name="busto_M" placeholder="Comprimento Busto M" required><br>
+                <input type="number" id="busto_G" name="busto_G" placeholder="Comprimento Busto G" required><br>
+                <input type="number" id="busto_GG" name="busto_GG" placeholder="Comprimento Busto GG" required><br>
                 <input type="number" id="manga_PP" name="manga_PP" placeholder="Manga PP" required><br>
                 <input type="number" id="manga_P" name="manga_P" placeholder="Manga P" required><br>
-                <input type="number" id="manga_M" name="manga_M" placeholder="Manga M" required><br>
-                <input type="number" id="manga_G" name="manga_G" placeholder="Manga G" required><br>
-                <input type="number" id="manga_GG" name="manga_GG" placeholder="Manga GG" required><br>
-                <label for="modelagem">Modelagem da camiseta, caso queira uma camiseta mais justa digite 1, normal digite 2 e larga digite 3</label>
-                <input type="number" id="modelagem" name="modelagem" placeholder="Modelagem" required><br>
+                <input type="number" id="manga_M" name="manga_M" placeholder="Comprimento Manga M" required><br>
+                <input type="number" id="manga_G" name="manga_G" placeholder="Comprimento Manga G" required><br>
+                <input type="number" id="manga_GG" name="manga_GG" placeholder="Comprimento Manga GG" required><br>
+                <div class="form-group">
+                    <label for="modelagem">Modelagem da camiseta</label>
+                    <select id="modelagem" name="modelagem" class="form-control" required>
+                        <option value="1">Mais Justa</option>
+                        <option value="2">Normal</option>
+                        <option value="3">Larga</option>
+                    </select>
+                </div>
                 <label for="image">Selecione uma imagem:</label>
                 <input type="file" id="image" name="image" accept="image/*" required>
                 {{ form.as_p }}
