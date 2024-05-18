@@ -63,11 +63,14 @@ WSGI_APPLICATION = 'design_measure.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# Escolher um banco de dados para o projeto
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'iBoYLCrqYzquvVNsQIuohcSjVjpmpVSA',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '43844',
     }
 }
 
