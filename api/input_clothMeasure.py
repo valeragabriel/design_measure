@@ -2,37 +2,6 @@ import numpy as np
 import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 
-# Solicitar no views.py 
-# def get_tamanho_camiseta(blusa_PP, blusa_P, blusa_M, blusa_G, blusa_GG, busto_PP, busto_P, busto_M, busto_G, busto_GG, manga_PP, manga_P, manga_M, manga_G, manga_GG):
-#     blusa_PP = int(input("Digite o valor do comprimento da camiseta no tamanho PP: "))
-#     blusa_P = int(input("Digite o valor do comprimento da camiseta no tamanho P: "))
-#     blusa_M = int(input("Digite o valor do comprimento da camiseta no tamanho M: "))
-#     blusa_G = int(input("Digite o valor do comprimento da camiseta no tamanho G: "))
-#     blusa_GG = int(input("Digite o valor do comprimento da camiseta no tamanho GG: "))
-
-#     busto_PP = int(input("Digite o valor do comprimento do busto no tamanho PP: "))
-#     busto_P = int(input("Digite o valor do comprimento do busto no tamanho P: "))
-#     busto_M = int(input("Digite o valor do comprimento do busto no tamanho M: "))
-#     busto_G = int(input("Digite o valor do comprimento do busto no tamanho G: "))
-#     busto_GG = int(input("Digite o valor do comprimento do busto no tamanho GG: "))
-
-#     manga_PP = int(input("Digite o valor do comprimento da manga no tamanho PP: "))
-#     manga_P = int(input("Digite o valor do comprimento da manga no tamanho P: "))
-#     manga_M = int(input("Digite o valor do comprimento da manga no tamanho M: "))
-#     manga_G = int(input("Digite o valor do comprimento da manga no tamanho G: "))
-#     manga_GG = int(input("Digite o valor do comprimento da manga no tamanho GG: "))
-    
-#     return blusa_PP, blusa_P, blusa_M, blusa_G, blusa_GG, busto_PP, busto_P, busto_M, busto_G, busto_GG, manga_PP, manga_P, manga_M, manga_G, manga_GG
-
-# def modelagem_camiseta():
-#     print("Modelagem da Camiseta")
-#     print("1 - Justa")
-#     print("2 - Normal")
-#     print("3 - Larga")
-#     modelagem = input("Digite o número correspondente da modelagem que prefere: ")
-
-#     return modelagem
-
 def camiseta(resultado_busto, resultado_manga, resultado_blusa, blusa_PP, blusa_P, blusa_M, blusa_G, blusa_GG, busto_PP, busto_P, busto_M, busto_G, busto_GG, manga_PP, manga_P, manga_M, manga_G, manga_GG, modelagem):
     comprimento_busto = ctrl.Antecedent(np.arange(busto_PP, busto_GG, 1), 'comprimento_busto')    
     comprimento_manga = ctrl.Antecedent(np.arange(manga_PP, manga_GG, 1), 'comprimento_manga')
