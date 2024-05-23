@@ -76,8 +76,8 @@
          </div>
       </header> 
       <!-- end header -->
-      <!-- about -->
       <div class="we_do">
+         <!-- Seção principal -->
          <div class="about_container">
              <div class="row">
                  <div class="col-md-12">
@@ -87,19 +87,22 @@
                  </div>
              </div>
          </div>
-      </div>
-      <div class="content" style="margin-top: -200px; justify-content: space-around; text-align: center; width: 200%;">
-         <div class="">
-            <p>MeasureMate é um site que surgiu da necessidade de obter medidas corporais de forma rápida e precisa, sem depender de fitas métricas. Nesse contexto, desenvolvemos um algoritmo de extração de medidas corporais para facilitar a vida daqueles que necessitam dessas informações de forma confiável. Oferecemos um serviço abrangente, que vai desde a extração das medidas corporais até a recomendação do tamanho de vestuário ideal com base nessas medidas. Além disso, proporcionamos uma área para análise das medidas ao longo do tempo. MeasureMate é uma ferramenta acessível a todos, basta criar uma conta e aproveitar os nossos serviços.</p>
-         </div>
-     </div>    
-      <div class="content" style="margin-top: 50px; justify-content: space-around; text-align: center;">
-         <img src="{% static 'images/men_measure.png' %}" alt="Imagem 1">
-         <p>Deixei apenas uma imagem demo, que ira ser trocada e tambem o texto sera trocado, mas pretendo falar como o algoritmo foi feito.</p>
      </div>
-     <div class="content" style="margin-top: -100px; justify-content: space-around; text-align: center;">
-         <p>Aqui eu pretendo complementar como foi feito o algoritmo e falar nas possiveis futuras aplicacacoes e atuais.</p>
-         <img src="{% static 'images/pose.png' %}" alt="Imagem 2">
+ 
+     <div class="content" style="margin-top: -200px; justify-content: space-around; text-align: center; width: 200%;">
+         <!-- Conteúdo adicionado -->
+         <div class="">
+             <p>MeasureMate é um site que surgiu da necessidade de obter medidas corporais de forma rápida e precisa, sem depender de fitas métricas. Nesse contexto, desenvolvemos um algoritmo de extração de medidas corporais para facilitar a vida daqueles que necessitam dessas informações de forma confiável. Oferecemos um serviço abrangente, que vai desde a extração das medidas corporais até a recomendação do tamanho de vestuário ideal com base nessas medidas. Além disso, proporcionamos uma área para análise das medidas ao longo do tempo. MeasureMate é uma ferramenta acessível a todos, basta criar uma conta e aproveitar os nossos serviços.</p>
+         </div>
+     </div>
+ 
+     <div class="content" style="margin-top: 50px; justify-content: space-around; text-align: center;">
+         <!-- Conteúdo da seção principal -->
+         <img src="{% static 'images/Measure_reference.png' %}" alt="Imagem 1">
+         <p>Esta é a imagem de referência das medidas extraídas, abaixo tem uma tabela referenciando as medidas. Todas essas medidas são obtidas a partir da parte frontal do corpo, pois a foto utilizada é em 2D. Para garantir a praticidade do algoritmo, optamos por reduzir o número de medidas corporais necessárias, minimizando a quantidade de dados que o usuário precisa fornecer.</p>
+         <div style="text-align: center;">
+             <img src="{% static 'images/tabela_medidas.png' %}" alt="Imagem 2" width="4000">
+         </div>
      </div>
       <!-- footer -->
       <footer>

@@ -75,9 +75,9 @@
          </div>
       </header> 
       <!-- end header -->
-      <!-- we_do -->
       <div class="we_do">
-         <div class="container">
+         <!-- Seção principal -->
+         <div class="about_container">
              <div class="row">
                  <div class="col-md-12">
                      <div class="titlepage text_align_center">
@@ -85,48 +85,37 @@
                      </div>
                  </div>
              </div>
-             <div class="row">
-                 <div class="col-md-12">
-                     <div id="we1" class="carousel slide" data-ride="carousel">
-                         <ol class="carousel-indicators">
-                             <li data-target="#we1" data-slide-to="0" class="active"></li>
-                             <li data-target="#we1" data-slide-to="1"></li>
-                             <li data-target="#we1" data-slide-to="2"></li>
-                         </ol>
-                         <div class="carousel-inner">
-                             {% for feature in features %}
-                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                 <div class="container-fluid">
-                                     <div class="carousel-caption we1_do">
-                                         <div class="row">
-                                             <div class="col-md-4">
-                                                 <div class="we_box text_align_left">
-                                                     <i><img src="{{ feature.img_logo.url }}" alt="#"/></i>
-                                                     <h3>{{ feature.name }}</h3>
-                                                     <p>{{ feature.description }}</p>
-                                                     <a class="read_more" href="{{ feature.url }}">Read More</a>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             {% endfor %}
-                         </div>
-                         <a class="carousel-control-prev" href="#we1" role="button" data-slide="prev">
-                             <i class="fa fa-angle-left" aria-hidden="true"></i>
-                             <span class="sr-only">Previous</span>
-                         </a>
-                         <a class="carousel-control-next" href="#we1" role="button" data-slide="next">
-                             <i class="fa fa-angle-right" aria-hidden="true"></i>
-                             <span class="sr-only">Next</span>
-                         </a>
-                     </div>
-                 </div>
-             </div>
          </div>
      </div>
-      <!-- end we_do -->
+ 
+     <div class="content" style="margin-top: -200px; text-align: center; ">
+         <!-- Conteúdo centro -->
+         <div class="">
+             <p> Está área é destinada para falar sobre os serviços que são possíveis de realizar no MeasureMate, caso queira utilizar de algum desses serviços basta logar  </p>
+         </div>
+     </div>
+     <div style="display: flex; flex-direction: column;">
+      <div class="content" style="margin-top: 50px; justify-content: space-around; display: flex; align-items: center;">
+          <!-- Conteúdo da seção 1 -->
+          <img src="{% static 'images/Measure_reference.png' %}" alt="Imagem 1" style="width: 40%;">
+          <p style="width: 50%;">Este é o principal serviço do site. Através de uma foto e a altura informada, o usuário obtém o retorno de suas medidas corporais.</p>
+      </div>
+  
+      <div class="content" style="margin-top: 50px; justify-content: space-around; display: flex; align-items: center;">
+          <!-- Conteúdo da segunda seção -->
+          <p style="width: 50%;">Através das medidas corporais o usuário consegue descobrir qual o tamanho ideal de vestuário</p>
+          <img src="{% static 'images/measure_cloth3.png' %}" alt="Imagem 2" style="width: 40%;">
+      </div>
+  
+      <div class="content" style="margin-top: 50px; justify-content: space-around; display: flex; align-items: center;">
+          <!-- Conteúdo da terceira seção -->
+          <img src="{% static 'images/measure_cloth2.png' %}" alt="Imagem 3" style="width: 40%;">
+          <p style="width: 50%;">Através das medidas corporais o usuário consegue descobrir qual o tamanho ideal de vestuário, entretanto nessa opção o usuário tem que fornecer o tamanho das roupas com base na sua loja de preferência</p>
+      </div>
+  
+      <!-- Espaço em branco -->
+      <div style="height: 50px;"></div>
+  </div>
       <!-- footer -->
       <footer>
          <div class="footer">
