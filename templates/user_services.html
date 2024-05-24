@@ -145,7 +145,7 @@
              {% for feature in features %}
              <div class="wrapper">
                <h1>{{feature.name}}</h1>
-               <img src="{% static feature.img_logo %}" alt="Descrição da Imagem">
+               <img src="{% static feature.img_logo %}" alt="Descrição da Imagem" width="500">
                <p>{{feature.description }}</p>
                <a href="{% url feature.url %}"><button>Clique para utilizar</button></a>
             </div>

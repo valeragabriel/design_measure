@@ -151,7 +151,7 @@ def user_services(request):
     feature1 = Features.objects.create(
         name="Extração de Medidas corporais",
         description="Informe sua altura, e envie uma foto, para  descobrir suas medidas corporais.",
-        img_logo="/images/run_code.png",
+        img_logo="/images/Measure_reference.png",
         url="bodyMeasure"
     )
 
@@ -165,7 +165,7 @@ def user_services(request):
     feature3 = Features.objects.create(
         name="Vestimento Ideal, com base na sua loja de interesse ",
         description="Através das suas medidas corporais enviadas encontramos o tamanho de roupa ideal para você, entretanto você que define o tamanhos de medidas das roupas. ",
-        img_logo="/images/measure_cloth1.png",
+        img_logo="/images/measure_cloth2.png",
         url="clothMeasure2"
     )
 
