@@ -82,30 +82,48 @@
       <!-- main section -->
       <div class="container">
          <div class="row">
-            <div class="col-md-12">
-               <div class="title" style="margin-top: 140px;" >
-                  <h2>Body Measurements</h2>
+            <div class="col-md-12 text-center">
+               <div class="title" style="margin-top: 140px;">
+                  <h2>Medidas Corporais</h2>
+               </div>
+               <div class="description mt-4">
+                  <p>
+                     Através de uma foto e informando sua altura, consiga os resultados das suas medidas corporais.
+                     Envie uma foto igual a foto referência abaixo.
+                  </p>
+               </div>
+               <div class="reference-image mt-4">
+                  <img src="{% static 'images/imagem_ref.png' %}" alt="Imagem de Referência" class="img-fluid">
                </div>
             </div>
-         <main>
-             <form method="post" enctype="multipart/form-data">
-                 {% csrf_token %}
-                 <label for="height_cm">Altura em Centímetros</label><br>
-                 <input type="number" id="height_cm" name="height_cm" placeholder="1,80m = 180cm" required><br>
-                 {{ form.as_p }}
-                 <button type="submit">Enviar</button>
-             </form>
-             {% if form.errors %}
-                 <p style="color: red;">Erro ao enviar o formulário. Por favor, verifique os campos e tente novamente.</p>
-             {% endif %}
-             {% if image_results %}
-                 <section id="results">
+            <main class="col-md-12 mt-4">
+               <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                  {% csrf_token %}
+                  <div class="form-group">
+                     <label for="height_cm">Altura em Centímetros</label>
+                     <input type="number" class="form-control" id="height_cm" name="height_cm" placeholder="1,80m = 180cm" required>
+                     <div class="invalid-feedback">
+                        Por favor, insira sua altura em centímetros.
+                     </div>
+                  </div>
+                  {{ form.as_p }}
+                  <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+               </form>
+               {% if form.errors %}
+                  <div class="alert alert-danger mt-3">
+                     Erro ao enviar o formulário. Por favor, verifique os campos e tente novamente.
+                  </div>
+               {% endif %}
+               {% if image_results %}
+                  <section id="results" class="mt-4">
                      <h2>Resultados</h2>
-                     <img src="{{ image_results }}" alt="Resultado da Imagem">
-                 </section>
-             {% endif %}
-         </main>
-     </div>
+                     <img src="{{ image_results }}" alt="Resultado da Imagem" class="img-fluid">
+                  </section>
+               {% endif %}
+            </main>
+         </div>
+      </div>
+      <!-- main section -->
       <!-- footer -->
       <footer>
         <div class="footer">
