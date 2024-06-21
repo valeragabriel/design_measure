@@ -110,3 +110,6 @@ Aqui está apenas uma visão geral, caso queira saber mais, basta acessar o dire
 - **manage.py:** Um utilitário de linha de comando que permite interagir com o projeto Django de várias maneiras, como iniciar o servidor de desenvolvimento, criar migrações de banco de dados e executar testes.
 
 - **requirements.txt:** Um arquivo de texto que lista todas as dependências Python necessárias para executar o projeto. Pode ser usado para instalar todas as dependências com um único comando.
+
+## Vídeo do Fucionamento 
+Foi criado um vídeo demonstrando o funcionamento e os serviços presentes neste site, ele está disponível no youtube, basta acessar esse link: https://youtu.be/5MDQduXCZaM 
