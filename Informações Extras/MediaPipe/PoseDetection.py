@@ -26,9 +26,9 @@ def draw_landmarks_on_image(rgb_image, detection_result):
       solutions.drawing_styles.get_default_pose_landmarks_style())
   return annotated_image
 
-model_path = "pose_landmarker_lite.task"
+model_path = "MediaPipe/pose_landmarker_lite.task"
 
-img_path =  "MrOlympia.jpeg"
+img_path =  "MediaPipe/MrOlympia.jpeg"
 
 # Imagem OpenCv
 img = cv2.imread(img_path)
